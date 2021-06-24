@@ -1,6 +1,3 @@
-/**
- *  We are finding a roots of quadratic equation ax^2+bx+c.
- */
 
 import java.util.Scanner;
 public class Quadratic {
@@ -13,18 +10,17 @@ public class Quadratic {
         System.out.print("Enter c: ");
         double c = s.nextDouble();
 
-        double deltaValue = delta(a,b,c);  //call the 'delta' function
+        double deltaValue = delta(a,b,c);  
         System.out.println("Delta value: " + deltaValue);
 
-        double root11 = root1(deltaValue, a, b);     // call the 'root1' function
+        double root11 = root1(deltaValue, a, b);    
         System.out.println("Root 1: " + root11);
 
-        double root21 = root2(deltaValue, a, b);     // call the 'root2' function
+        double root21 = root2(deltaValue, a, b);    
         System.out.println("Root 2: " + root21);
 
     }
-
-    // define a function 'delta', it will return delta value
+    
     private static double delta(double a, double b, double c) {
         double delta = (b*b)-(4.0*a*c);
         return delta;
