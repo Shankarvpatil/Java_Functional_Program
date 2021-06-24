@@ -1,28 +1,14 @@
 import java.util.Scanner;
-
-public class TwoDArray {
+public class WindChill {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter the row size of an array: ");
-        int arrayRowSize = s.nextInt();
-        System.out.print("Enter the column size of an array: ");
-        int arrayColSize = s.nextInt();
+        System.out.print("Enter temperature in Fahrenheit: ");
+        double t = s.nextDouble();
+        System.out.print("Enter a wind speed (in miles per hr): ");
+        double v = s.nextDouble();
 
-        int[][] arrayName = new int[arrayRowSize][arrayColSize];   
+        double windChill = 35.74 + (0.6215 * t) + ((0.4275 * t - 35.75) * (Math.pow(v, 0.16)));
 
-        for (int i=0; i<arrayRowSize; i++) {
-            for (int j=0; j<arrayColSize; j++) {
-                System.out.println("Enter a value: ");
-                arrayName[i][j]=s.nextInt();
-            }
-        }
-
-        for (int i=0; i<arrayRowSize; i++) {
-            for (int j=0; j<arrayColSize; j++) {
-                System.out.print(arrayName[i][j] + " ");
-            }
-            System.out.println("\n");
-        }
-
+        System.out.printf("Wind Chill is: %.2f", windChill);
     }
 }
