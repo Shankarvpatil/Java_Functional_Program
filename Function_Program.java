@@ -1,19 +1,28 @@
-public class Sum {
-    public static void main(String[] args) {
-        int[] arr = {1,2,3,-1,-2,-3,4};
-        int sum, count = 0;
+import java.util.Scanner;
 
-        for (int i=0; i<7; i++) {
-            for (int j=i+1; j<7; j++) {
-                for (int k=j+1; k<7; k++) {
-                    sum = arr[i]+arr[j]+arr[k];
-                    if (sum == 0) {
-                        count++;
-                        System.out.println(arr[i] + "," + arr[j]+ "," + arr[k] + "=" + 0 );
-                    }
-                }
+public class TwoDArray {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the row size of an array: ");
+        int arrayRowSize = s.nextInt();
+        System.out.print("Enter the column size of an array: ");
+        int arrayColSize = s.nextInt();
+
+        int[][] arrayName = new int[arrayRowSize][arrayColSize];   
+
+        for (int i=0; i<arrayRowSize; i++) {
+            for (int j=0; j<arrayColSize; j++) {
+                System.out.println("Enter a value: ");
+                arrayName[i][j]=s.nextInt();
             }
         }
-        System.out.println("Count: " + count);
+
+        for (int i=0; i<arrayRowSize; i++) {
+            for (int j=0; j<arrayColSize; j++) {
+                System.out.print(arrayName[i][j] + " ");
+            }
+            System.out.println("\n");
+        }
+
     }
 }
